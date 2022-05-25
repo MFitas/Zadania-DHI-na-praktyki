@@ -5,54 +5,60 @@ namespace Happy_Numbers
 {
     class Program
     {
-        static double Conversion(double number)
+        static double ConversionToDouble(double givenNumber)
         {
-            string temp = number.ToString();
-            char[] temp2 = new char[temp.Length];
-            temp2 = temp.ToCharArray();
-            double[] intarray = new double[temp.Length];
+            string convertedToString = givenNumber.ToString();
+            char[] charArray = new char[convertedToString.Length];
+            charArray = convertedToString.ToCharArray();
+            double[] convertedBackToDouble = new double[convertedToString.Length];
 
-            for (int i = 0; i < temp.Length; i++)
+            for (int i = 0; i < convertedToString.Length; i++)
             {
-                intarray[i] = Convert.ToDouble(temp2[i].ToString());
-                Console.WriteLine("int" + intarray[i]);
-                Console.WriteLine("char" + temp2[i]);
+                convertedBackToDouble[i] = Convert.ToDouble(charArray[i].ToString());
+                
             }
-            return Powers(intarray);
+            double a = SquareOf(convertedBackToDouble);
+            return a;
         }
-        static double Powers(double[] number)
+        static double SquareOf(double[] convertedDouble)
         {
 
-            for (int i = 0; i < number.Length; i++)
+            for (int i = 0; i < convertedDouble.Length; i++)
             {
-                number[i] = Math.Pow(number[i], 2);
+                convertedDouble[i] = Math.Pow(convertedDouble[i], 2);
             }
-            double sum = number.Sum();
-            return sum;
+
+            double result = convertedDouble.Sum();           
+            return result;
         }
-        static bool isItHappy(double sum)
+        static bool IsItHappy(double isItHappy)
         {
-            double[] memory = new double[20];
-            int m = 0;
-            if (sum == 1)
-            {
-                return true;
-            }
-            else
-            {
-                memory[m] = sum;
-                m++;
-                for (int i = 0; i < memory.Length; i++)
+            double[] endlessLoopProtection = new double[200];
+            for (int i = 0; i < endlessLoopProtection.Length; i++)            
+            {              
+                if (isItHappy == 1)
                 {
-                    if (sum == memory[i])
-                    {
-                        return false;
-                    }
-
+                    return true;
                 }
-                Conversion(sum);
-            }
+                else
+                {
+                    endlessLoopProtection[i] = isItHappy;                    
+                    for (int j = 0; j < i; j++)
+                    {
+                        
+                        if (endlessLoopProtection[i]==endlessLoopProtection[j])
+                        {
+                            Console.WriteLine("warunek");
+                            return false;
+                            
+                        }
+                    }
+                    
+                }
+                isItHappy = ConversionToDouble(isItHappy);              
 
+            }
+            return false;
         }
         static void Main(string[] args)
         {
@@ -75,7 +81,7 @@ namespace Happy_Numbers
             } while (true);
 
 
-            if (isItHappy(number))
+            if (IsItHappy(number))
             {
                 Console.ForegroundColor = ConsoleColor.DarkYellow;
                 Console.WriteLine(number + " that you have entered is in fact a happy number!");

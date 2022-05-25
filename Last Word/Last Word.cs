@@ -4,7 +4,7 @@ namespace Last_Word
 {
     class Program
     {
-        static int lastWord(string arg)
+        static int LastWord(string arg)
         {
             int lastWorld = 0;
             int doubleSpaceProtection = 0;
@@ -32,7 +32,7 @@ namespace Last_Word
         {
             Console.WriteLine("Enter your sentence here, and I will count letters in the last word");
             string sentence = Console.ReadLine();
-            int lastWordLength = lastWord(sentence);
+            int lastWordLength = LastWord(sentence);
             Console.WriteLine("Last word length is equal to: " + lastWordLength);
         }
     }

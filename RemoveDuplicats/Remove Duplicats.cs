@@ -4,7 +4,7 @@ namespace RemoveDuplicats
 {
     class Program
     {
-        static int removeDuplicates(int[] array)
+        static int RemoveDuplicates(int[] array)
         {
             int j = 0;
             for (int i = 1; i < array.Length; i++)

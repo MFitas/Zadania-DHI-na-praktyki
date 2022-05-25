@@ -4,7 +4,7 @@ namespace Valid_palindrome
 {
     class Program
     {
-        static bool isItAPalindrome(string palindrome)
+        static bool IsItAPalindrome(string palindrome)
         {
             palindrome = palindrome.ToLower();
             char[] removedSigns = palindrome.ToCharArray();
@@ -30,7 +30,7 @@ namespace Valid_palindrome
 
             string query = Console.ReadLine();
 
-            if (isItAPalindrome(query))
+            if (IsItAPalindrome(query))
             {
                 Console.WriteLine("It really is a palindrome");
             }
