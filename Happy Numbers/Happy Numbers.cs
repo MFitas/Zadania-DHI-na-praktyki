@@ -17,8 +17,8 @@ namespace Happy_Numbers
                 convertedBackToDouble[i] = Convert.ToDouble(charArray[i].ToString());
                 
             }
-            double a = SquareOf(convertedBackToDouble);
-            return a;
+            double resultOfConversion = SquareOf(convertedBackToDouble);
+            return resultOfConversion;
         }
         static double SquareOf(double[] convertedDouble)
         {
@@ -28,8 +28,8 @@ namespace Happy_Numbers
                 convertedDouble[i] = Math.Pow(convertedDouble[i], 2);
             }
 
-            double result = convertedDouble.Sum();           
-            return result;
+            double squareOfDigits = convertedDouble.Sum();           
+            return squareOfDigits;
         }
         static bool IsItHappy(double isItHappy)
         {
