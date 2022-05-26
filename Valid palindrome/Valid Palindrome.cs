@@ -15,14 +15,7 @@ namespace Valid_palindrome
             string reversedPalindrome = new string(removedSigns);
 
             bool isEqual = String.Equals(reversedPalindrome, palindrome);
-            if (isEqual)
-            {
-                return true;
-            }
-            else
-            {
-                return false;
-            }
+            return isEqual;
         }
         static void Main(string[] args)
         {
@@ -39,4 +32,5 @@ namespace Valid_palindrome
                 Console.WriteLine("It's not a palindrome");
             }
         }
+    }
 }
